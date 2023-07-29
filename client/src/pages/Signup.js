@@ -80,14 +80,6 @@ const Signup = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -96,7 +88,7 @@ const Signup = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="******"
+                  placeholder="Create a new password"
                   name="password"
                   type="password"
                   value={formState.password}
