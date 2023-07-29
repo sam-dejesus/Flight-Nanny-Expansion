@@ -1,12 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import Auth from '../../utils/auth';
-
+import { logout, loggedIn, getProfile } from "../../utils/auth";
+ 
 const Header = () => {
-  const logout = (event) => {
+  const logoutAction = (event) => {
     event.preventDefault();
-    Auth.logout();
+
+    logout();
   };
   return (
     <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
@@ -18,12 +19,15 @@ const Header = () => {
           <p className="m-0">A Nanny wings</p>
         </div>
         <div>
-          {Auth.loggedIn() ? (
+          {loggedIn() ? (
             <>
               <Link className="btn btn-lg btn-info m-2" to="/me">
-                {Auth.getProfile().data.username}'s profile
+                {getProfile().data.username}'s profile
               </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              <button
+                className="btn btn-lg btn-light m-2"
+                onClick={logoutAction}
+              >
                 Logout
               </button>
             </>
