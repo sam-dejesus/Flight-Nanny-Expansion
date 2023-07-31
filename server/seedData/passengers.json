@@ -1,0 +1,93 @@
+[
+    {
+      "id": 1,
+      "first_name": "Scot",
+      "last_name": "Gilardone",
+      "Flight_number": "DL 6078",
+      "Nanny": true,
+      "phone_number": "123-456-7890",
+      "email": "scot@example.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Lib",
+      "last_name": "Villa",
+      "Flight_number": "DL 6078",
+      "Nanny": false,
+      "phone_number": "987-654-3210",
+      "email": "lib@example.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Ignazio",
+      "last_name": "Russan",
+      "Flight_number": "AA 1754",
+      "Nanny": true,
+      "phone_number": "555-123-4567",
+      "email": "ignazio@example.com"
+    },
+    {
+      "id": 4,
+      "first_name": "Danice",
+      "last_name": "Feasby",
+      "Flight_number": "AA 1754",
+      "Nanny": false,
+      "phone_number": "888-987-6543",
+      "email": "danice@example.com"
+    },
+    {
+      "id": 5,
+      "first_name": "Carlos",
+      "last_name": "Horsted",
+      "Flight_number": "UA 1395",
+      "Nanny": true,
+      "phone_number": "777-555-1234",
+      "email": "carlos@example.com"
+    },
+    {
+      "id": 6,
+      "first_name": "Allene",
+      "last_name": "Livingston",
+      "Flight_number": "UA 1395",
+      "Nanny": false,
+      "phone_number": "222-777-5555",
+      "email": "allene@example.com"
+    },
+    {
+      "id": 7,
+      "first_name": "Steven",
+      "last_name": "Harpin",
+      "Flight_number": "CA 5694",
+      "Nanny": true,
+      "phone_number": "444-222-7777",
+      "email": "steven@example.com"
+    },
+    {
+      "id": 8,
+      "first_name": "Collin",
+      "last_name": "Wedderburn",
+      "Flight_number": "CA 5694",
+      "Nanny": false,
+      "phone_number": "666-444-2222",
+      "email": "collin@example.com"
+    },
+    {
+      "id": 9,
+      "first_name": "Derek",
+      "last_name": "Peplaw",
+      "Flight_number": "LH 9698",
+      "Nanny": true,
+      "phone_number": "999-666-4444",
+      "email": "derek@example.com"
+    },
+    {
+      "id": 10,
+      "first_name": "Sande",
+      "last_name": "Schust",
+      "Flight_number": "LH 9698",
+      "Nanny": false,
+      "phone_number": "000-999-6666",
+      "email": "sande@example.com"
+    }
+  ]
+  

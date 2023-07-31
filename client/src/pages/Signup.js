@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import { login } from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    firstname:'',
-    lastname:'',
-    phonenumber:'',
-    username: '',
-    email: '',
-    password: '',
+    firstname: "",
+    lastname: "",
+    phonenumber: "",
+    username: "",
+    email: "",
+    password: "",
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -35,7 +35,7 @@ const Signup = () => {
         variables: { ...formState },
       });
 
-      Auth.login(data.addUser.token);
+      login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
@@ -49,7 +49,7 @@ const Signup = () => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{' '}
+                Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
@@ -80,14 +80,6 @@ const Signup = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -96,7 +88,7 @@ const Signup = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="******"
+                  placeholder="Create a new password"
                   name="password"
                   type="password"
                   value={formState.password}
@@ -104,7 +96,7 @@ const Signup = () => {
                 />
                 <button
                   className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   type="submit"
                 >
                   Submit
