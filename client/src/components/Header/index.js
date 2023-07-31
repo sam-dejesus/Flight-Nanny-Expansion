@@ -10,14 +10,14 @@ const Header = () => {
     logout();
   };
   return (
-    <header className="">
-      <div className="">
+    <header className="header">
+      <div className="navbar">
         <div>
           <Link className="" to="/">
             <h1 className="">FlightNanny</h1>
           </Link>
         </div>
-        <div>
+        <div className="">
           {loggedIn() ? (
             <>
               <Link className="" to="/me">

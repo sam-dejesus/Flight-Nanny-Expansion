@@ -15,17 +15,7 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
-        <h4>
-          Made with{' '}
-          <span
-            className="emoji"
-            role="img"
-            aria-label="heart"
-            aria-hidden="false"
-          >
-            ❤️
-          </span>{' '}
-        </h4>
+        <h4>anything we may need in a footer, goes here</h4>
       </div>
     </footer>
   );

@@ -54,53 +54,65 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your first name"
-                  name="firstname"
-                  type="text"
-                  value={formState.firstname}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your last name"
-                  name="lastname"
-                  type="text"
-                  value={formState.lastname}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your phone number"
-                  name="username"
-                  type="text"
-                  value={formState.phonenumber}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Create a new password"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  Submit
-                </button>
+                <div className="form-inputs-container">
+                  <input
+                    className="form-input"
+                    placeholder="Your first name"
+                    name="firstname"
+                    type="text"
+                    value={formState.firstname}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-inputs-container">
+                  <input
+                    className="form-input"
+                    placeholder="Your last name"
+                    name="lastname"
+                    type="text"
+                    value={formState.lastname}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-inputs-container">
+                  <input
+                    className="form-input"
+                    placeholder="Your phone number"
+                    name="username"
+                    type="text"
+                    value={formState.phonenumber}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-inputs-container">
+                  <input
+                    className="form-input"
+                    placeholder="Your email"
+                    name="email"
+                    type="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-inputs-container">
+                  <input
+                    className="form-input"
+                    placeholder="Create a new password"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <button
+                    className="btn btn-block btn-primary"
+                    style={{ cursor: "pointer" }}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
               </form>
             )}
 
