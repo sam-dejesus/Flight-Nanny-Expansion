@@ -13,10 +13,10 @@ code {
     monospace;
 }
 
-/* .nanniesPage {
+.nanniesPage {
   height: 500px;
   background-color: blue;
-} */
+}
 .container {
   font-size: 20px;
 }
@@ -29,4 +29,23 @@ code {
 
 button {
   border-radius: 10px;
+}
+.form-input{
+  border-radius: 10px;
+  width: 30vw;
+}
+
+.form-inputs-container {
+  padding: 5px;
+  text-align: center;
+  
+}
+
+.individual-child {
+  padding: 30px;
+}
+
+.navbar {
+  background-color: rgb(58, 255, 206);
+  justify-content: space-between;
 }
