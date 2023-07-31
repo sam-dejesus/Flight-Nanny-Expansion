@@ -17,4 +17,4 @@ const childrenSchema = new Schema({
 
 const Children = model('Children', childrenSchema);
 
-model.export = Children;
+module.exports = Children;

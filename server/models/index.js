@@ -1,6 +1,6 @@
-const User = require('./User')
-const Passenger = require('./models/Passenger');
-const Children = require('./models/Children');
+const User = require('./User');
+const Passenger = require('./Passenger');
+const Children = require('./Children');
 
 
 module.exports = {User, Passenger, Children}
