@@ -5,7 +5,7 @@ const { Schema, model } = require('mongoose');
 const passengerSchema = new Schema({
   id: {
     type: Number,
-    required: true
+    required: false
   },
   first_name: {
     type: String,
@@ -17,7 +17,7 @@ const passengerSchema = new Schema({
   },
   Flight_number: {
     type: String,
-    required: true
+    required: false
   },
   Nanny: {
     type: Boolean,
@@ -30,7 +30,11 @@ const passengerSchema = new Schema({
   email: {
     type: String,
     required: true
-  }
+  },
+  children: {
+  type: Schema.Types.ObjectId, 
+  ref: 'Children' 
+  } 
 });
 
 // Create the Passenger model
