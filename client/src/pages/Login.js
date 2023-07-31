@@ -41,11 +41,11 @@ const Login = (props) => {
   };
 
   return (
-    <main className="">
-      <div className="">
-        <div className="">
-          <h4 className="">Login</h4>
-          <div className="">
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-lg-10">
+        <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Log in</h4>
+          <div className="card-body">
             {data ? (
               <p>
                 Success! You may now head{" "}
@@ -53,24 +53,28 @@ const Login = (props) => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
-                <input
-                  className=""
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className=""
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
+                <div className="form-inputs-container">
+                  <input
+                    className="form-input"
+                    placeholder="Your email"
+                    name="email"
+                    type="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-inputs-container">
+                  <input
+                    className="form-input"
+                    placeholder="******"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                  />
+                </div>
                 <button
-                  className=""
+                  className="btn btn-block btn-primary"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >
