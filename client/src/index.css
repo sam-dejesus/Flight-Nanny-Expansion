@@ -49,3 +49,8 @@ button {
   background-color: rgb(58, 255, 206);
   justify-content: space-between;
 }
+
+.user-type-selector {
+  width: 50vw;
+  text-align: center;
+}
