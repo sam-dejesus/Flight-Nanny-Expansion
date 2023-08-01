@@ -1,7 +1,6 @@
-// src/SearchBar.js
+// src/testing/SearchBar.js
 import React, { useState } from 'react';
-import { useLazyQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
+import { useLazyQuery, gql } from '@apollo/client'; // Update the import statement
 
 const SEARCH_PASSENGERS = gql`
   query SearchPassengers($Flight_number: String!) {
@@ -23,15 +22,9 @@ const SearchBar = () => {
   const [searchPassengers, { loading, data }] = useLazyQuery(SEARCH_PASSENGERS);
 
   const handleSearch = () => {
-    //the button does hold the flight number the issue is in the execution
-
-    searchPassengers({ variables: { Flight_number: searchQuery } },
-
-        // this console.log works
-        
-        );
-        console.log(searchPassengers)
-    
+    if (searchQuery.trim() !== '') {
+      searchPassengers({ variables: { Flight_number: searchQuery } });
+    }
   };
 
   return (
@@ -66,3 +59,4 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+
