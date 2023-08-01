@@ -78,8 +78,8 @@ const Signup = () => {
                   <input
                     className="form-input"
                     placeholder="Your phone number"
-                    name="username"
-                    type="text"
+                    name="phonenumber"
+                    type="number"
                     value={formState.phonenumber}
                     onChange={handleChange}
                   />
