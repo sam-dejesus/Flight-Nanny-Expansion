@@ -18,6 +18,8 @@ import Kids from "./pages/Kids";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import SearchBar from "./testing/SearchBar"
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -50,6 +52,9 @@ function App() {
           <Header />
           <div className="container">
             <Routes>
+
+              < Route path="/search" element={<SearchBar />} /> 
+              
               <Route path="/" element={<Home />} />
               <Route path="/matches" element={<Matches />} />
               <Route path="/kids" element={<Kids />} />
