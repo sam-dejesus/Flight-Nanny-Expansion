@@ -15,6 +15,9 @@ const Signup = () => {
     email: "",
     password: "",
   });
+
+  const [selectedRadial, setSelectedRadial] = useState();
+
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
@@ -41,6 +44,20 @@ const Signup = () => {
     }
   };
 
+  const formType = () => {
+    if (selectedRadial === "passanger") {
+      return (
+        <button
+          className="btn btn-block btn-primary px-5"
+          style={{ cursor: "pointer" }}
+          type="submit"
+        >
+          Add family
+        </button>
+      );
+    }
+  };
+
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
@@ -54,6 +71,52 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                <div className="card">
+                  {/* <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="btn-check"
+                    name="nanny"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-primary" for="btn-check">
+                    I’m a Nanny and I’m here to help
+                  </label>
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="btn-check-2"
+                    name="passenger"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-primary" for="btn-check-2">
+                    I have kids and I need help
+                  </label> */}
+                  <div class="form-inputs-container form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                      onClick={() => setSelectedRadial("nanny")}
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      I’m a Nanny and I’m here to help
+                    </label>
+                  </div>
+                  <div class="form-inputs-container form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      onClick={() => setSelectedRadial("passanger")}
+                    />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      I have kids and I need help!!
+                    </label>
+                  </div>
+                </div>
                 <div className="form-inputs-container">
                   <input
                     className="form-input"
@@ -104,9 +167,10 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div>
+                <div className="d-flex justify-content-center">
+                  {formType()}
                   <button
-                    className="btn btn-block btn-primary"
+                    className="btn btn-block btn-primary px-5"
                     style={{ cursor: "pointer" }}
                     type="submit"
                   >

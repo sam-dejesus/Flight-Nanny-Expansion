@@ -4,12 +4,11 @@ const Home = () => {
   return (
     <div>
       <h1 className="flex-row justify-center mb-4">Welcome, userName</h1>
-      <img src="" />
       <div className="col-12 col-lg-10">
         <p>Which child is traveling with you today?</p>
         <div className="children-list">
           <div className="card">
-            <label for="checkbox-id">Child 1</label>
+            <label  for="checkbox-id">Child 1</label>
             <input
               type="checkbox"
               id="checkbox-id"
@@ -35,7 +34,7 @@ const Home = () => {
               id="checkbox-id"
               name="checkbox-name"
               value="checkbox-value"
-            ></input>
+            ></input><div>Age: "?"</div>
             
           </div>
           <Link to="/kids">Edit list</Link>
@@ -50,7 +49,7 @@ const Home = () => {
         <input className="form-input" placeholder="flight number" />
       </div>
       <Link to="/matches">
-        <button className="btn btn-dark mb-3">Search</button>
+        <button className="btn btn-block btn-primary">Search</button>
       </Link>
     </div>
   );
