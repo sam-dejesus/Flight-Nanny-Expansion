@@ -1,6 +1,7 @@
 const Passenger = require('../models/Passenger')
 const User = require('../models/User')
 const Children = require('../models/Children')
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -34,8 +35,58 @@ const resolvers = {
               // Handle any error that might occur during the update process
               throw new Error('Failed to update passenger data.');
             }
-        }
+        },
+        
+        // creates a new user with token
+        addUser: async (parent, args) => {
+          try {
+            const newUser = new User({
+              firstname: args.firstname,
+              lastname: args.lastname,
+              phonenumber: args.phonenumber,
+              username: args.username,
+              email: args.email,
+              password: args.password,
+            });
+            
+            const token = signToken(newUser);
+      
+            // Save the user to the database
+            const savedUser = await newUser.save();
+            
+    
+            // Return the saved user object, including the email
+            return {token, savedUser}
+          } catch (error) {
+            throw new Error('Error creating user: ' + error.message);
+          }
+        },
+    
+
+        login: async (parent, { username, password }) => {
+          const user = await User.findOne({ username });
+    
+          if (!user) {
+            throw new AuthenticationError('No user found with this username address');
+          }
+    
+          const correctPw = await user.isCorrectPassword(password);
+    
+          if (!correctPw) {
+            throw new AuthenticationError('Incorrect credentials');
+          }
+    
+          const token = signToken(user);
+    
+          return { token, user };
+        },
       },
 }
 
 module.exports = resolvers;
+
+// addUser: async (parent, { username, email, password }) => {
+//   const user = await User.create({ username, email, password });
+//   const token = signToken(user);
+//   return { token, user };
+// },   
