@@ -73,13 +73,18 @@ const Login = (props) => {
                     onChange={handleChange}
                   />
                 </div>
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                  Log in
-                </button>
+                <div className="ButtonContainer">
+                  <button
+                    className="btn btn-block btn-primary"
+                    style={{ cursor: "pointer" }}
+                    type="submit"
+                  >
+                    Log in
+                  </button>
+                </div>
+                <Link className="" to="/signup">
+                  Sign Up
+                </Link>
               </form>
             )}
 

@@ -72,26 +72,6 @@ const Signup = () => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <div className="card">
-                  {/* <input
-                    type="checkbox"
-                    class="btn-check"
-                    id="btn-check"
-                    name="nanny"
-                    autocomplete="off"
-                  />
-                  <label class="btn btn-primary" for="btn-check">
-                    I’m a Nanny and I’m here to help
-                  </label>
-                  <input
-                    type="checkbox"
-                    class="btn-check"
-                    id="btn-check-2"
-                    name="passenger"
-                    autocomplete="off"
-                  />
-                  <label class="btn btn-primary" for="btn-check-2">
-                    I have kids and I need help
-                  </label> */}
                   <div class="form-inputs-container form-check">
                     <input
                       class="form-check-input"
@@ -167,15 +147,17 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="d-flex justify-content-center">
-                  {formType()}
-                  <button
-                    className="btn btn-block btn-primary px-5"
-                    style={{ cursor: "pointer" }}
-                    type="submit"
-                  >
-                    Submit
-                  </button>
+                <div className="ButtonContainer">
+                  <div className="form-inputs-container form-input form-check">
+                    {formType()}
+                    <button
+                      className="btn btn-block btn-primary px-5"
+                      style={{ cursor: "pointer" }}
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </form>
             )}

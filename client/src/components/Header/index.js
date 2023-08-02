@@ -13,8 +13,11 @@ const Header = () => {
     <header className="header">
       <div className="navbar">
         <div>
+        </div>
+        <div>
           <Link className="" to="/">
             <h1 className="">FlightNanny</h1>
+            <img src="../../app-logo.png" width="100px"/>
           </Link>
         </div>
         <div className="">
@@ -32,9 +35,9 @@ const Header = () => {
               <Link className="" to="/login">
                 Login
               </Link>
-              <Link className="" to="/signup">
+              {/* <Link className="" to="/signup">
                 Signup
-              </Link>
+              </Link> */}
             </>
           )}
         </div>
