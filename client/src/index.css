@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   text-align: center;
   margin: 10px;
@@ -47,48 +51,15 @@ button {
   padding: 30px;
 }
 
-.navbar {
+/* .navbar {
   background-color: rgb(58, 255, 206);
   justify-content: space-between;
-}
+} */
 
 .user-type-selector {
   width: 50vw;
   text-align: center;
 }
 
-.ButtonContainer {
-  justify-content: center;
-}
 
 
-.btn {
-  width: 50%;
-  margin: 5px;
-}
-
-.flex-row {
-  text-align: center;
-}
-.mb-4 {
-  padding: 20px;
-}
-.card-body {
-  text-align: center;
-}
-.childCard {
-  background-color: azure;
-  border-radius: 5px;
-  width: 50vw;
-  align-items: center;
-}
-
-.footerSection {
-     position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: rgb(88, 88, 88);
-   color: rgb(78, 67, 67);
-   text-align: center;
-}
