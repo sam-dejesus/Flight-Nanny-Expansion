@@ -1,6 +1,6 @@
-// src/testing/SearchBar.js
-import React, { useState } from 'react';
-import { useLazyQuery, gql } from '@apollo/client'; // Update the import statement
+
+import React, { useState } from "react";
+import { useLazyQuery, gql } from "@apollo/client"; // Update the import statement
 
 const SEARCH_PASSENGERS = gql`
   query SearchPassengers($Flight_number: String!) {
@@ -16,17 +16,15 @@ const SEARCH_PASSENGERS = gql`
     }
   }
 `;
-
 const SearchBar = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchPassengers, { loading, data }] = useLazyQuery(SEARCH_PASSENGERS);
-
   const handleSearch = () => {
-    if (searchQuery.trim() !== '') {
+    if (searchQuery.trim() !== "") {
+
       searchPassengers({ variables: { Flight_number: searchQuery } });
     }
   };
-
   return (
     <div>
       <input
@@ -44,7 +42,7 @@ const SearchBar = () => {
             <li key={passenger._id}>
               <p>Name: {`${passenger.first_name} ${passenger.last_name}`}</p>
               <p>Flight Number: {passenger.Flight_number}</p>
-              <p>Nanny: {passenger.Nanny ? 'Yes' : 'No'}</p>
+              <p>Nanny: {passenger.Nanny ? "Yes" : "No"}</p>
               <p>Phone Number: {passenger.phone_number}</p>
               <p>Email: {passenger.email}</p>
               <p>Children: {passenger.children}</p>
@@ -57,6 +55,5 @@ const SearchBar = () => {
     </div>
   );
 };
-
 export default SearchBar;
 
