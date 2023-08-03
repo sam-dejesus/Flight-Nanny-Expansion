@@ -2,39 +2,26 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
-      <h1 className="flex-row justify-center mb-4">Welcome, userName</h1>
-      <div className="col-12 col-lg-10">
-        <p>Which child is traveling with you today?</p>
-        <div className="children-list">
-          <div className="card">
-            <label  for="checkbox-id">Child 1</label>
-            <input
-              type="checkbox"
-              id="checkbox-id"
-              name="checkbox-name"
-              value="checkbox-value"
-            ></input>
+    <div >
+      <h1 className="">Welcome, userName</h1>
+      <div className="">
+        <p className="">Which child is traveling with you today?</p>
+        <div className="form-control">
+          <div className="">
+            <label  for="checkbox-id">
+              <span className="label-text">Child 1</span>
+              <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" value="checkbox-value"></input>
+            </label>
             <div>Age: "?"</div>
           </div>
-          <div className="card">
+          <div className="">
             <label for="checkbox-id">Child 2</label>
-            <input
-              type="checkbox"
-              id="checkbox-id"
-              name="checkbox-name"
-              value="checkbox-value"
-            ></input>
+            <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" value="checkbox-value"></input>
             <div>Age: "?"</div>
           </div>
-          <div className="card">
+          <div className="">
             <label for="checkbox-id">Child 3</label>
-            <input
-              type="checkbox"
-              id="checkbox-id"
-              name="checkbox-name"
-              value="checkbox-value"
-            ></input><div>Age: "?"</div>
+            <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" value="checkbox-value"></input><div>Age: "?"</div>
             
           </div>
           <Link to="/kids">Edit list</Link>
