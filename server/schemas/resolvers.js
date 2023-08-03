@@ -47,6 +47,7 @@ const resolvers = {
               username: args.username,
               email: args.email,
               password: args.password,
+              status: args.status
             });
             
             const token = signToken(newUser);

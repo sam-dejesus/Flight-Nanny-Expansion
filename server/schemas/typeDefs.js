@@ -25,6 +25,7 @@ type User {
   phonenumber: String!
   username: String!
   email: String!
+  status: Boolean!
 }
 
 type Auth {
@@ -47,6 +48,7 @@ type Auth {
         username: String!
         email: String!
         password: String!
+        status: Boolean!
       ): Auth
 
         addPassenger(
