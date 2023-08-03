@@ -1,4 +1,5 @@
 body {
+  text-align: center;
   margin: 10px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -19,6 +20,7 @@ code {
 }
 .container {
   font-size: 20px;
+  text-align: center;
 }
 
 .children-list {
@@ -32,7 +34,7 @@ button {
 }
 .form-input{
   border-radius: 10px;
-  width: 30vw;
+  width: 50%
 }
 
 .form-inputs-container {
@@ -53,4 +55,40 @@ button {
 .user-type-selector {
   width: 50vw;
   text-align: center;
+}
+
+.ButtonContainer {
+  justify-content: center;
+}
+
+
+.btn {
+  width: 50%;
+  margin: 5px;
+}
+
+.flex-row {
+  text-align: center;
+}
+.mb-4 {
+  padding: 20px;
+}
+.card-body {
+  text-align: center;
+}
+.childCard {
+  background-color: azure;
+  border-radius: 5px;
+  width: 50vw;
+  align-items: center;
+}
+
+.footerSection {
+     position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgb(88, 88, 88);
+   color: rgb(78, 67, 67);
+   text-align: center;
 }
