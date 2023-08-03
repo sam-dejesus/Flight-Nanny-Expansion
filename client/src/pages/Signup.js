@@ -16,7 +16,7 @@ const Signup = () => {
     password: "",
   });
 
-  const [selectedRadial, setSelectedRadial] = useState();
+  // const [selectedRadial, setSelectedRadial] = useState();
 
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -44,19 +44,19 @@ const Signup = () => {
     }
   };
 
-  const formType = () => {
-    if (selectedRadial === "passanger") {
-      return (
-        <button
-          className="btn btn-block btn-primary px-5"
-          style={{ cursor: "pointer" }}
-          type="submit"
-        >
-          Add family
-        </button>
-      );
-    }
-  };
+  // const formType = () => {
+  //   if (selectedRadial === "passanger") {
+  //     return (
+  //       <button
+  //         className="btn btn-block btn-primary px-5"
+  //         style={{ cursor: "pointer" }}
+  //         type="submit"
+  //       >
+  //         Add family
+  //       </button>
+  //     );
+  //   }
+  // };
 
   return (
     <main className="flex-row justify-center mb-4">
@@ -72,7 +72,9 @@ const Signup = () => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <div className="card">
+
                   <div class="form-inputs-container form-check">
+
                     <input
                       class="form-check-input"
                       type="radio"
@@ -83,8 +85,8 @@ const Signup = () => {
                     <label class="form-check-label" for="flexRadioDefault1">
                       I’m a Nanny and I’m here to help
                     </label>
-                  </div>
-                  <div class="form-inputs-container form-check">
+                  </div> */}
+                  {/* <div class="form-inputs-container form-check">
                     <input
                       class="form-check-input"
                       type="radio"
@@ -95,7 +97,7 @@ const Signup = () => {
                     <label class="form-check-label" for="flexRadioDefault2">
                       I have kids and I need help!!
                     </label>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="form-inputs-container">
                   <input
@@ -117,6 +119,17 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                 </div>
+                <div className="form-inputs-container">
+                <input
+                    className="form-input"
+                    placeholder="Your username"
+                    name="username"
+                    type="text"
+                    value={formState.username}
+                    onChange={handleChange}
+                  />
+                </div>
+
                 <div className="form-inputs-container">
                   <input
                     className="form-input"
@@ -147,6 +160,7 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                 </div>
+
                 <div className="ButtonContainer">
                   <div className="form-inputs-container form-input form-check">
                     {formType()}
@@ -158,6 +172,7 @@ const Signup = () => {
                       Submit
                     </button>
                   </div>
+
                 </div>
               </form>
             )}
