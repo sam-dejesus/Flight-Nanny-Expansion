@@ -43,21 +43,6 @@ const Signup = () => {
       console.error(e);
     }
   };
-
-  // const formType = () => {
-  //   if (selectedRadial === "passanger") {
-  //     return (
-  //       <button
-  //         className="btn btn-block btn-primary px-5"
-  //         style={{ cursor: "pointer" }}
-  //         type="submit"
-  //       >
-  //         Add family
-  //       </button>
-  //     );
-  //   }
-  // };
-
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
@@ -80,24 +65,11 @@ const Signup = () => {
                       type="radio"
                       name="flexRadioDefault"
                       id="flexRadioDefault1"
-                      onClick={() => setSelectedRadial("nanny")}
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                       I’m a Nanny and I’m here to help
                     </label>
-                  </div> */}
-                  {/* <div class="form-inputs-container form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault2"
-                      onClick={() => setSelectedRadial("passanger")}
-                    />
-                    <label class="form-check-label" for="flexRadioDefault2">
-                      I have kids and I need help!!
-                    </label>
-                  </div> */}
+                  </div>
                 </div>
                 <div className="form-inputs-container">
                   <input
@@ -163,7 +135,6 @@ const Signup = () => {
 
                 <div className="ButtonContainer">
                   <div className="form-inputs-container form-input form-check">
-                    {formType()}
                     <button
                       className="btn btn-block btn-primary px-5"
                       style={{ cursor: "pointer" }}

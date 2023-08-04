@@ -61,5 +61,21 @@ button {
   text-align: center;
 }
 
+.nannyAvatar{
+  width: 100px;
+}
 
+.nannyResultCard{
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
 
+.nannyResultCard:hover {
+  background-color: rgb(44, 44, 44);
+}
+
+.nannyResultCard:active:active {
+  background-color: rgb(13, 17, 34);
+}
