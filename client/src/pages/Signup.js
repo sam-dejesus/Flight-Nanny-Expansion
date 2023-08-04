@@ -58,6 +58,23 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+
+                <div className="card">
+
+                  <div class="form-inputs-container form-check">
+
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      I’m a Nanny and I’m here to help
+                    </label>
+                  </div>
+                </div>
+
                 <div className="form-inputs-container">
                   <input
                     className="form-input"
