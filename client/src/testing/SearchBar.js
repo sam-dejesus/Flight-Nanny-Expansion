@@ -41,8 +41,6 @@ const SearchBar = () => {
           {data.Flight_number.map((passenger) => (
             <li key={passenger._id}>
               <p>Name: {`${passenger.first_name} ${passenger.last_name}`}</p>
-              <p>Flight Number: {passenger.Flight_number}</p>
-              <p>Nanny: {passenger.Nanny ? "Yes" : "No"}</p>
               <p>Phone Number: {passenger.phone_number}</p>
               <p>Email: {passenger.email}</p>
               <p>Children: {passenger.children}</p>

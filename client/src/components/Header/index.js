@@ -1,15 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import { logout, loggedIn, getProfile } from "../../utils/auth";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   const logoutAction = (event) => {
     event.preventDefault();
-
+    navigate("/")
     logout();
+
+
   };
   return (
+
     <header className="">
       <div className="navbar bg-base-100">
         <div className="flex-1">
@@ -40,6 +45,7 @@ const Header = () => {
               </>
             )}
           </ul>
+
         </div>
       </div>
     </header>
