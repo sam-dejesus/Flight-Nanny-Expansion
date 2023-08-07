@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { logout, loggedIn, getProfile } from "../../utils/auth";
+import { BiSolidPlaneAlt } from "react-icons/bi";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -15,11 +16,11 @@ const Header = () => {
   };
   return (
 
-    <header className="">
-      <div className="navbar bg-base-100">
+    <header className="header">
+      <div className="navbar px-4">
+      <BiSolidPlaneAlt style={{color: 'white', fontSize: '50px'}}/>
         <div className="flex-1">
-          <img src="../../app-logo.png" width="100px" />
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
+          <Link to="/" className="Title">
             Flight Nanny
           </Link>
         </div>
@@ -27,20 +28,20 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">
             {loggedIn() ? (
               <>
-                <Link className="" to="/me">
+                <Link className="navButton" to="/me">
                   {getProfile().data.username}'s profile
                 </Link>
-                <button className="" onClick={logoutAction}>
+                <button className="navButton" onClick={logoutAction}>
                   Logout
                 </button>
               </>
             ) : (
               <>
                 <li>
-                  <Link to="/login">Login</Link>
+                  <Link to="/login" className="navButton">Login</Link>
                 </li>
                 <li>
-                  <Link to="/signup">Sign Up</Link>
+                  <Link to="/signup" className="navButton">Sign Up</Link>
                 </li>
               </>
             )}

@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --primaryColor:#F0EFF4 ;
+  --secondaryColor: #832161;
+  --accentColor: #DA4167;
+  --buttonColor: #FFB703;
+  --textColor: #000000;
+  --tertiaryColor: #3D2645;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+*{
+  font-family: "Poppins", sans-serif;
+}
 body {
   text-align: center;
   margin: 10px;
@@ -37,8 +51,11 @@ button {
   border-radius: 10px;
 }
 .form-input{
+  color: white;
   border-radius: 10px;
-  width: 50%
+  width: 50%;
+  padding: 5px;
+  text-align: center;
 }
 
 .form-inputs-container {
@@ -50,32 +67,109 @@ button {
 .individual-child {
   padding: 30px;
 }
-
-/* .navbar {
-  background-color: rgb(58, 255, 206);
-  justify-content: space-between;
-} */
+/* Navbar/Header */
+.navbar {
+  background-color: var(--accentColor);
+  padding: 5%;
+}
 
 .user-type-selector {
   width: 50vw;
   text-align: center;
 }
 
-.nannyAvatar{
-  width: 100px;
+/* Flight Nanny Title */
+.Title{
+  color: var(--primaryColor);
+  text-decoration: none;
 }
-
-.nannyResultCard{
-  display: flex;
+/* Page Window. Every page loaded should be within the <div> with this class */
+.window{
+  height: 100vh;
+  background-color: #dbdbdb;
+  background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
+}
+/* Form Buttons */
+.login{
+  background-color: var(--secondaryColor);
+  color:var(--primaryColor);
   padding: 5px;
-  margin: 5px;
+  margin-top:10px;
   border-radius: 5px;
+  width: 28rem;
+}
+.login:hover{
+  background-color: var(--accentColor);
+  transition: 0.4s;
+}
+/* Forms Container */
+.card{
+  margin: 2rem;
+}
+/* Form Content */
+.card-body{
+  background-color: var(--primaryColor);
+}
+/* Buttons on Navbar */
+.navButton{
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--primaryColor);
+  height: 4rem;
+  width: 6rem;
+  padding: 20%;
+}
+/* Buttons on Navbar. Should have a hover effect. Currently doesn't work. */
+.navButton:hover{
+  background-color: #ef7c999b;
+  transition: 0.3s;
+}
+/* Headers for a form */
+.form-header{
+  background-color: var(--accentColor);
+  color: var(--primaryColor);
+  padding: 10px;
+  margin: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+/* Links that don't catch your immediate attention  */
+.lessImportantLink{
+  text-decoration: none;
+  font-size: smaller;
+  color:grey;
 }
 
-.nannyResultCard:hover {
-  background-color: rgb(44, 44, 44);
+.lessImportantLink :hover{
+  color:  rgb(196, 196, 196);
 }
 
-.nannyResultCard:active:active {
-  background-color: rgb(13, 17, 34);
+/* Checkboxes for Forms */
+.checkbox{
+  height: 20px;
+  width: 20px;
+  vertical-align: bottom;
+  position: relative;
+  top: -3px;
+}
+
+/* Child selection sections on Home page */
+.childCards{
+  display: inline;
+  padding: 1rem;
+}
+/* Text next to checkboxes*/
+.checkLabel{
+  padding-left: 15px;
+}
+/* 2nd Section of any page */
+.pageSection-2{
+  background-color: var(--accentColor);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: var(--primaryColor);
+}
+
+.welcome-text{
+  padding-top: 2rem;
 }

@@ -3,28 +3,29 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div >
-      <h1 className="">Welcome, userName</h1>
+      <h1 className="welcome-text">Welcome, userName</h1>
       <div className="">
-        <p className="">Which child is traveling with you today?</p>
+        <p className="form-header">Which child is traveling with you today?</p>
         <div className="form-control">
-          <div className="">
-            <label  for="checkbox-id">
-              <span className="label-text">Child 1</span>
-              <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" value="checkbox-value"></input>
+          <div className="card childCards">
+            <label for="checkbox-id" className="">
+            <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" ></input>
+            <span className="checkLabel">Child 1 | Age: "?"</span>
             </label>
-            <div>Age: "?"</div>
           </div>
-          <div className="">
-            <label for="checkbox-id">Child 2</label>
-            <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" value="checkbox-value"></input>
-            <div>Age: "?"</div>
+          <div className="card childCards">
+          <label for="checkbox-id" className="">
+            <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" ></input>
+            <span className="checkLabel">Child 2 | Age: "?"</span>
+            </label>
           </div>
-          <div className="">
-            <label for="checkbox-id">Child 3</label>
-            <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" value="checkbox-value"></input><div>Age: "?"</div>
-            
+          <div className="card childCards">
+          <label for="checkbox-id" className="">
+            <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" ></input>
+            <span className="checkLabel">Child 3 | Age: "?"</span>
+            </label>
           </div>
-          <Link to="/kids">Edit list</Link>
+          <Link to="/kids" className="lessImportantLink">Edit list</Link>
         </div>
       </div>
       <div className="">
