@@ -60,15 +60,6 @@ const Signup = () => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                   <div class="form-inputs-container form-check">
-                    <input
-                      class="form-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault1"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      I’m a Nanny and I’m here to help
-                    </label>
                   </div>
 
                 <div className="form-inputs-container">
