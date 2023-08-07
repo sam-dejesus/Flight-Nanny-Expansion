@@ -52,6 +52,7 @@ const Home = () => {
 
 
   return (
+
     <div>
       <h1 className="">Welcome {userData.username}</h1>
       <div className="">
@@ -64,6 +65,7 @@ const Home = () => {
           value={formState.children}
           onChange={handleChange}
         />
+
       </div>
       <div className="">
         <p>What is your budget?</p>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { logout, loggedIn, getProfile } from "../../utils/auth";
+import { BiSolidPlaneAlt } from "react-icons/bi";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -14,33 +15,38 @@ const Header = () => {
 
   };
   return (
+
     <header className="header">
-      <div className="navbar">
-        <div>
-        </div>
-        <div>
-          <Link className="" to="/">
-            <h1 className="">FlightNanny</h1>
-            <img src="../../app-logo.png" width="100px"/>
+      <div className="navbar px-4">
+      <BiSolidPlaneAlt style={{color: 'white', fontSize: '50px'}}/>
+        <div className="flex-1">
+          <Link to="/" className="Title">
+            Flight Nanny
           </Link>
         </div>
-        <div className="">
-          {loggedIn() ? (
-            <>
-              <Link className="" to="/me">
-                {getProfile().data.username}'s profile
-              </Link>
-              <button className="" onClick={logoutAction}>
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link className="" to="/">
-                Login
-              </Link>
-            </>
-          )}
+        <div className="flex-none">
+          <ul className="menu menu-horizontal px-1">
+            {loggedIn() ? (
+              <>
+                <Link className="navButton" to="/me">
+                  {getProfile().data.username}'s profile
+                </Link>
+                <button className="navButton" onClick={logoutAction}>
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/login" className="navButton">Login</Link>
+                </li>
+                <li>
+                  <Link to="/signup" className="navButton">Sign Up</Link>
+                </li>
+              </>
+            )}
+          </ul>
+
         </div>
       </div>
     </header>

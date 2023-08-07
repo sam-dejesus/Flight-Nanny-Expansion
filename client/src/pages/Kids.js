@@ -1,12 +1,14 @@
 const Kids = () => {
   return (
     <div>
-      <h1 className="flex-row justify-center mb-4">Welcome, userName</h1>
-      <div className="col-12 col-lg-10">
-        <p>Add or Remove your your little travelers here</p>
-        <div className="form-inputs-container">
-          <input className="card" placeholder="child's name" />
-          <select className="card" id="childAgeSelect">
+      <h1 className="welcome-text">Welcome, userName</h1>
+      <div className="card">
+        <p className="form-header">Add or Remove your your little travelers here</p>
+        <div className="form-inputs-container py-3">
+          <div>
+            <input className="form-imput my-3 text-center" placeholder="child's name" />
+          </div>
+          <select className="form-input my-3" id="childAgeSelect">
             <option value="childAge" disabled selected>
               Child's age
             </option>
@@ -23,7 +25,7 @@ const Kids = () => {
             <option value="10">10</option>
           </select>
           <button className="btn btn-dark mb-3" id="addOneMoreButton">Add One More</button>
-          <button className="btn btn-block btn-primary" id="addOneMoreButton">Submit</button>
+          <button className="btn-wide btn-primary login" id="addOneMoreButton">Submit</button>
         </div>
       </div>
     </div>
