@@ -33,6 +33,7 @@ export const QUERY_ME = gql`
         _id
         createdAt
       }
+      status
     }
   }
 `;

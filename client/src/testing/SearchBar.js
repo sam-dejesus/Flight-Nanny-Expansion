@@ -1,28 +1,32 @@
 
 import React, { useState } from "react";
 import { useLazyQuery, gql } from "@apollo/client"; // Update the import statement
+import { useNavigate } from "react-router-dom";
+import './searchbar.css'
 
 const SEARCH_PASSENGERS = gql`
-  query SearchPassengers($Flight_number: String!) {
-    Flight_number(Flight_number: $Flight_number) {
+  query SearchPassengers($flight_number: String!) {
+    flight_number(flight_number: $flight_number) {
       _id
-      first_name
-      last_name
-      Flight_number
-      Nanny
-      phone_number
+      firstname
+      lastname
+      flight_number
+      phonenumber
       email
       children
+      price
     }
   }
 `;
 const SearchBar = () => {
+  const navigate = useNavigate();
+  const hi = (passenger)=>{  navigate("/request",  { state: { passenger } });}
   const [searchQuery, setSearchQuery] = useState("");
   const [searchPassengers, { loading, data }] = useLazyQuery(SEARCH_PASSENGERS);
   const handleSearch = () => {
     if (searchQuery.trim() !== "") {
 
-      searchPassengers({ variables: { Flight_number: searchQuery } });
+      searchPassengers({ variables: { flight_number: searchQuery } });
     }
   };
   return (
@@ -31,19 +35,18 @@ const SearchBar = () => {
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search passengers by Flight number"
+        placeholder="Search passengers by flight number"
       />
       <button onClick={handleSearch}>Search</button>
       {loading ? (
         <p>Loading...</p>
-      ) : data && data.Flight_number ? (
+      ) : data && data.flight_number ? (
         <ul>
-          {data.Flight_number.map((passenger) => (
-            <li key={passenger._id}>
-              <p>Name: {`${passenger.first_name} ${passenger.last_name}`}</p>
-              <p>Phone Number: {passenger.phone_number}</p>
-              <p>Email: {passenger.email}</p>
+          {data.flight_number.map((passenger) => (
+            <li key={passenger._id} className="liDiv" onClick={() => hi(passenger)}>
+              <p>Name: {`${passenger.firstname} ${passenger.lastname}`}</p>
               <p>Children: {passenger.children}</p>
+              <p>Price: {passenger.price}</p>
             </li>
           ))}
         </ul>
