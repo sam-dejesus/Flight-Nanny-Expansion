@@ -23,3 +23,18 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_PASSENGER = gql`
+  mutation addPassenger($firstname: String!, $lastname: String!, $flight_number: String!,  $phonenumber: String!, $email: String!, $price: String!, $children: String!) {
+    addPassenger(firstname: $firstname, lastname: $lastname, flight_number: $flight_number,  phonenumber: $phonenumber, email: $email, price: $price, children: $children) {
+      _id
+      firstname
+      lastname
+      flight_number
+      phonenumber
+      email
+      price
+      children
+    }
+  }
+`;

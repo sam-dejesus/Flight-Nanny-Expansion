@@ -2,14 +2,14 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql `
 type Passenger {
-    _id: ID
-    first_name: String
-    last_name: String
-    Flight_number: String
-    Nanny: Boolean
-    phone_number: String
-    email: String
-    children: String
+  _id: ID!
+  firstname: String!
+  lastname: String!
+  flight_number: String!
+  phonenumber: String!
+  email: String!
+  price: String!
+  children: String!
 }
 
 type Children {
@@ -36,7 +36,7 @@ type Auth {
 
     type Query {
         passengers:[Passenger]
-        Flight_number(Flight_number: String): [Passenger]
+        flight_number(flight_number: String): [Passenger]
       }
     
     type Mutation {
@@ -51,14 +51,15 @@ type Auth {
         status: Boolean!
       ): Auth
 
-        addPassenger(
-            first_name: String!, 
-            last_name: String!, 
-            Nanny: Boolean!, 
-            phone_number: String!,
-            email: String!, 
-            children: String
-            ): Passenger
+      addPassenger(
+        firstname: String!
+        lastname: String!
+        flight_number: String!
+        phonenumber: String!
+        email: String!
+        price: String!
+        children: String!
+      ): Passenger
 
         addChildren(
             first_name: String!
@@ -70,9 +71,9 @@ type Auth {
         _id: ID!
         first_name: String
         last_name: String
-        Flight_number: String
+        flight_number: String
         Nanny: Boolean
-        phone_number: String
+        phonenumber: String
         email: String
         children: String
       ): Passenger

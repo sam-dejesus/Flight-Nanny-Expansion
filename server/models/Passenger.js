@@ -1,29 +1,25 @@
 const { Schema, model } = require('mongoose');
 
-
 // Define the schema for the passengers collection
 const passengerSchema = new Schema({
   id: {
     type: Number,
     required: false
   },
-  first_name: {
+  firstname: {
     type: String,
     required: true
   },
-  last_name: {
+  lastname: {
     type: String,
     required: true
   },
-  Flight_number: {
+  flight_number: {
     type: String,
     required: false
   },
-  Nanny: {
-    type: Boolean,
-    required: true
-  },
-  phone_number: {
+
+  phonenumber: {
     type: String,
     required: true
   },
@@ -31,10 +27,15 @@ const passengerSchema = new Schema({
     type: String,
     required: true
   },
+  price: {
+    type: String,
+    required: true,
+  },
   children: {
-  type: Schema.Types.ObjectId, 
-  ref: 'Children' 
-  } 
+    type: String,
+    required: true,
+    min: 0,
+  }
 });
 
 // Create the Passenger model

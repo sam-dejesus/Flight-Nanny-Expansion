@@ -9,20 +9,20 @@ const resolvers = {
             return await Passenger.find({})
         },
 
-        Flight_number: async (parent, { Flight_number }) => {
-            return await Passenger.find({ Flight_number });
+        flight_number: async (parent, { flight_number }) => {
+            return await Passenger.find({ flight_number });
         }
 
     },
     Mutation: {
-        addPassenger: async (parent, { first_name, last_name, Nanny, phone_number, email, children }) => {
+        addPassenger: async (parent, { firstname, lastname, phonenumber, email, children, price, flight_number }) => {
     
-          return await Passenger.create({ first_name, last_name, Nanny, phone_number, email, children });
+          return await Passenger.create({ firstname, lastname, phonenumber, email, children, price, flight_number });
         },
         
         updatePassenger: async (parent, args) => {
             const { _id, ...updateData } = args;
-            // `updateData` will contain the fields to update (first_name, last_name, Flight_number, etc.)
+            // `updateData` will contain the fields to update (first_name, last_name, flight_number, etc.)
       
             try {
               // Use Mongoose's `findByIdAndUpdate` to update the passenger data by ID
@@ -86,8 +86,4 @@ const resolvers = {
 
 module.exports = resolvers;
 
-// addUser: async (parent, { username, email, password }) => {
-//   const user = await User.create({ username, email, password });
-//   const token = signToken(user);
-//   return { token, user };
-// },   
+ 

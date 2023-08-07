@@ -1,44 +1,106 @@
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
+import { ADD_PASSENGER } from "../utils/mutations";
+import { useMutation } from "@apollo/client";
+import { getProfile } from "../utils/auth";
 
 const Home = () => {
+  const [userData, setUserData] = useState(getProfile().data);
+
+
+  const [formState, setFormState] = useState({
+    firstname: userData.firstname,
+    lastname: userData.lastname,
+    phonenumber: userData.phonenumber,
+    email: userData.email,
+    flight_number: "",
+    price: "",
+    children: "",
+  });
+
+
+  const [addPassenger, { error, data }] = useMutation(ADD_PASSENGER);
+
+  const handleChange = (event) => {
+    const { name, value, type } = event.target;
+    const fieldValue = type === "checkbox" ? event.target.checked : value;
+
+    setFormState({
+      ...formState,
+      [name]: fieldValue,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+  
+    try {
+      const { data } = await addPassenger({
+        variables: { ...formState }
+      });
+  
+      console.log(data); // Log the response data here
+  
+      // Handle the response data as needed (e.g., show a success message)
+      console.log("New passenger created:", data.addPassenger);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  
+
+
   return (
-    <div >
-      <h1 className="welcome-text">Welcome, userName</h1>
+
+    <div>
+      <h1 className="">Welcome {userData.username}</h1>
       <div className="">
-        <p className="form-header">Which child is traveling with you today?</p>
-        <div className="form-control">
-          <div className="card childCards">
-            <label for="checkbox-id" className="">
-            <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" ></input>
-            <span className="checkLabel">Child 1 | Age: "?"</span>
-            </label>
-          </div>
-          <div className="card childCards">
-          <label for="checkbox-id" className="">
-            <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" ></input>
-            <span className="checkLabel">Child 2 | Age: "?"</span>
-            </label>
-          </div>
-          <div className="card childCards">
-          <label for="checkbox-id" className="">
-            <input type="checkbox" id="checkbox-id" className="checkbox checkbox-success" name="checkbox-name" ></input>
-            <span className="checkLabel">Child 3 | Age: "?"</span>
-            </label>
-          </div>
-          <Link to="/kids" className="lessImportantLink">Edit list</Link>
-        </div>
+        <p className="">Which child is traveling with you today?</p>
+        <input
+          className="form-input"
+          placeholder="2"
+          name="children"
+          type="text"
+          value={formState.children}
+          onChange={handleChange}
+        />
+
       </div>
       <div className="">
         <p>What is your budget?</p>
-        <input className="form-input" placeholder="$0.00" type="currentcy" />
+        <input
+          className="form-input"
+          placeholder="$0.00"
+          name="price"
+          type="text"
+          value={formState.price}
+          onChange={handleChange}
+        />
       </div>
       <div className="">
         <p>What flight are you on?</p>
-        <input className="form-input" placeholder="flight number" />
+        <input
+          className="form-input"
+          placeholder="flight_number"
+          name="flight_number"
+          type="text"
+          value={formState.flight_number}
+          onChange={handleChange}
+        />
       </div>
-      <Link to="/matches">
-        <button className="btn btn-block btn-primary">Search</button>
-      </Link>
+      <div className="ButtonContainer">
+                  <div className="form-inputs-container form-input form-check">
+                    <button
+                      className="btn btn-block btn-primary px-5"
+                      style={{ cursor: "pointer" }}
+                      type="button"
+                      onClick={handleFormSubmit}
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
     </div>
   );
 };
