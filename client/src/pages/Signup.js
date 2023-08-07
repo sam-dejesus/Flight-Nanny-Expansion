@@ -58,18 +58,6 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
-                  <div class="form-inputs-container form-check">
-                    <input
-                      class="form-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault1"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      I’m a Nanny and I’m here to help
-                    </label>
-                  </div>
-
                 <div className="form-inputs-container">
                   <input
                     className="form-input"
@@ -134,7 +122,7 @@ const Signup = () => {
 
                 <div className="form-inputs-container form-check">
                   <input
-                    className="form-check-input"
+                    className="siteCheckBox"
                     type="checkbox"
                     name="status"
                     id="flexCheckDefault"
