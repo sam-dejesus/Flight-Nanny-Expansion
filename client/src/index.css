@@ -173,3 +173,13 @@ button {
 .welcome-text{
   padding-top: 2rem;
 }
+
+.siteCheckBox{
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  vertical-align: middle;
+}

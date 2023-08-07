@@ -126,7 +126,7 @@ const Signup = () => {
 
                 <div className="form-inputs-container form-check">
                   <input
-                    className="form-check-input"
+                    className="siteCheckBox"
                     type="checkbox"
                     name="status"
                     id="flexCheckDefault"
