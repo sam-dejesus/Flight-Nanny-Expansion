@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 
+
 import { login } from "../utils/auth";
 
 const Signup = () => {
@@ -58,6 +59,9 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                  <div class="form-inputs-container form-check">
+                  </div>
+
                 <div className="form-inputs-container">
                   <input
                     className="form-input"
@@ -151,7 +155,7 @@ const Signup = () => {
 
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
+                There was a problem with Signup!
               </div>
             )}
           </div>
