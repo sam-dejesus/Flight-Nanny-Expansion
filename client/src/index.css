@@ -183,3 +183,15 @@ button {
   background-color: #eee;
   vertical-align: middle;
 }
+
+.master{
+  height: 100vh;
+  
+  }
+  
+  .Btn{
+    margin-top: 12px;
+    padding: 5px;
+    background-color: rgb(248, 123, 144);
+  }
+  

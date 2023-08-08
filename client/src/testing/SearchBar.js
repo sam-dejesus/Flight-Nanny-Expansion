@@ -30,14 +30,16 @@ const SearchBar = () => {
     }
   };
   return (
-    <div>
+    <div className="mt-5 searchDiv mb-5">
+      <h2>Search passengers by flight number</h2>
       <input
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search passengers by flight number"
+        placeholder=""
+        className="inputSearch"
       />
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch} className="searchBtn">Search</button>
       {loading ? (
         <p>Loading...</p>
       ) : data && data.flight_number ? (
@@ -51,7 +53,7 @@ const SearchBar = () => {
           ))}
         </ul>
       ) : (
-        <p>No results found.</p>
+        <p></p>
       )}
     </div>
   );
