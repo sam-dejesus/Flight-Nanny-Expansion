@@ -35,12 +35,12 @@ const Profile = () => {
             <>
               
               <h2>ready to help</h2>
-              <button onClick={searchFlights}>search Flights</button>{" "}
+              <button onClick={searchFlights} className="Btn">Search Flights</button>{" "}
             </>
           ) : (
             <>
               <h2>ready!!!</h2>
-              <button onClick={postFlightRequest}>post Flights</button>
+              <button onClick={postFlightRequest} className="Btn">Post Flights</button>
             </>
           )}
         </div>
