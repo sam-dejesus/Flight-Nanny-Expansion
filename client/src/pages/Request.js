@@ -14,8 +14,8 @@ const Request = () => {
       <p>Phone Number: {passenger.phonenumber}</p>
       <p>Email: {passenger.email}</p>
       <p>Children: {passenger.children}</p>
-      <p>Price: {passenger.price}</p>
-     <h3>We have sent {passenger.firstname} a notification</h3>
+      <p>Price: ${passenger.price}.00</p>
+     <h3>We have sent {passenger.firstname} a notification ❤️</h3>
     </div>
   );
 };

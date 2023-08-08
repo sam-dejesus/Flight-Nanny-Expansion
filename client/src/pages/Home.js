@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { ADD_PASSENGER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { getProfile } from "../utils/auth";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const [userData, setUserData] = useState(getProfile().data);
@@ -44,7 +46,18 @@ const Home = () => {
   
       // Handle the response data as needed (e.g., show a success message)
       console.log("New passenger created:", data.addPassenger);
+
+      toast.success("Passenger created successfully!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+      });
     } catch (e) {
+      toast.error("An error occurred while creating the passenger.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+      });
       console.error(e);
     }
   };

@@ -16,7 +16,7 @@ import Matches from "./pages/Matches";
 import Kids from "./pages/Kids";
 
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 import SearchBar from "./testing/SearchBar";
 import Request from "./pages/Request";
@@ -48,10 +48,11 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+
       <Router>
-        <div className="">
+
           <Header />
-          <div className="container">
+          <div className="container master">
             <Routes>
               <Route path="request" element={<Request />} />
               <Route path="/" element={<Login />} />
@@ -64,9 +65,10 @@ function App() {
               <Route path="/profiles/:username" element={<Profile />} />
             </Routes>
           </div>
-          <Footer />
-        </div>
+     
+
       </Router>
+      
     </ApolloProvider>
   );
 }

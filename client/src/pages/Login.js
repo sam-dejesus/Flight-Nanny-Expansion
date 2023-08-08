@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+
+
+
 
 import { login } from "../utils/auth";
 
@@ -92,6 +99,23 @@ const Login = (props) => {
           </div>
         </div>
       </div>
+      <div className="d-flex flex-row justify-content-center mt-5">
+
+      <a href="https://www.facebook.com">
+          <FaFacebook className="icon-social" />
+        </a>
+        <a href="https://www.instagram.com">
+          <FaInstagramSquare className="icon-social" />
+        </a>
+        <a href="https://github.com">
+          <FaGithub className="icon-social" />
+        </a>
+        <a href="https://www.linkedin.com">
+          <FaLinkedin className="icon-social" />
+        </a>
+
+      </div>
+
     </main>
   );
 };
