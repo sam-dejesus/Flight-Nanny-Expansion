@@ -16,7 +16,7 @@ import Matches from "./pages/Matches";
 import Kids from "./pages/Kids";
 
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 import SearchBar from "./testing/SearchBar";
 import Request from "./pages/Request";
