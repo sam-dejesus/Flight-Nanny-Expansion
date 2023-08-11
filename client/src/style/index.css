@@ -51,6 +51,7 @@ button {
   border-radius: 10px;
 }
 .form-input{
+  background-color: rgb(244, 161, 192);
   color: white;
   border-radius: 10px;
   width: 50%;
@@ -78,11 +79,8 @@ button {
   text-align: center;
 }
 
-/* Flight Nanny Title */
-.Title{
-  color: var(--primaryColor);
-  text-decoration: none;
-}
+
+
 /* Page Window. Every page loaded should be within the <div> with this class */
 .window{
   height: 100vh;
@@ -110,20 +108,7 @@ button {
 .card-body{
   background-color: var(--primaryColor);
 }
-/* Buttons on Navbar */
-.navButton{
-  text-decoration: none;
-  font-size: 20px;
-  color: var(--primaryColor);
-  height: 4rem;
-  width: 6rem;
-  padding: 20%;
-}
-/* Buttons on Navbar. Should have a hover effect. Currently doesn't work. */
-.navButton:hover{
-  background-color: #ef7c999b;
-  transition: 0.3s;
-}
+
 /* Headers for a form */
 .form-header{
   background-color: var(--accentColor);
@@ -192,7 +177,11 @@ button {
   .Btn{
     margin-top: 12px;
     padding: 5px;
-    background-color: rgb(248, 123, 144);
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+  }
+  .Btn:hover{
+    background-color: var(--accentColor);
   }
 
   .icon-social{
@@ -217,4 +206,18 @@ button {
   }
 }
 
+.navBtnDiv{
+  width: 300px;
+  }
   
+  .searchBtn{
+    width: 300px;
+    color: var(--primaryColor);
+    margin-top: 12px;
+    padding: 5px;
+    background-color: var(--secondaryColor);
+  }
+  .searchBtn:hover{
+    color: var(--primaryColor);
+    background-color: var(--accentColor);
+  }

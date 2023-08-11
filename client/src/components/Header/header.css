@@ -1,0 +1,47 @@
+:root{
+    --primaryColor:#F0EFF4 ;
+    --secondaryColor: #832161;
+    --accentColor: #DA4167;
+    --buttonColor: #FFB703;
+    --textColor: #000000;
+    --tertiaryColor: #3D2645;
+  }
+  
+/* Flight Nanny Title */
+.Title{
+    color: var(--primaryColor);
+    text-decoration: none;
+    font-size: 30px;
+  }
+
+  /* Buttons on Navbar */
+.navButton{
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--primaryColor);
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+  }
+  /* Buttons on Navbar. Should have a hover effect. Currently doesn't work. */
+  .navButton:hover{
+    background-color: #ef7c999b;
+    transition: 0.3s;
+  }
+  .navButtonLogin{
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--primaryColor);
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navButtonLogin:hover{
+    background-color: #ef7c999b;
+    transition: 0.3s;
+  }

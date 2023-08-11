@@ -7,6 +7,12 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
+    // Regex pattern for validating the budget input
+    const budgetPattern = /^\d+(\.\d{1,2})?$/;
+
+    // Regex pattern for validating the flight number input
+
+
   const [userData, setUserData] = useState(getProfile().data);
 
 
@@ -24,8 +30,13 @@ const Home = () => {
   const [addPassenger, { error, data }] = useMutation(ADD_PASSENGER);
 
   const handleChange = (event) => {
-    const { name, value, type } = event.target;
-    const fieldValue = type === "checkbox" ? event.target.checked : value;
+    const { name, value } = event.target;
+    let fieldValue = value;
+
+    // Validate input using regex patterns
+    if (name === "price" && !budgetPattern.test(value)) {
+      fieldValue = formState.price; // Reset to previous value
+    }
 
     setFormState({
       ...formState,
@@ -66,7 +77,7 @@ const Home = () => {
 
   return (
 
-    <div>
+    <div className="d-flex flex-column justify-content-center">
       <h1 className="">Welcome {userData.username}</h1>
       <div className="">
         <p className="">Which child is traveling with you today?</p>
@@ -102,10 +113,10 @@ const Home = () => {
           onChange={handleChange}
         />
       </div>
-      <div className="ButtonContainer">
-                  <div className="form-inputs-container form-input form-check">
+      <div className="mt-5 d-flex justify-content-center ">
+  
                     <button
-                      className="btn btn-block btn-primary px-5"
+                      className=" searchBtn px-5"
                       style={{ cursor: "pointer" }}
                       type="button"
                       onClick={handleFormSubmit}
@@ -113,9 +124,10 @@ const Home = () => {
                       Submit
                     </button>
                   </div>
-                </div>
+
     </div>
   );
 };
 
 export default Home;
+

@@ -43,7 +43,7 @@ const SearchBar = () => {
       {loading ? (
         <p>Loading...</p>
       ) : data && data.flight_number ? (
-        <ul>
+        <ul className="searchResults">
           {data.flight_number.map((passenger) => (
             <li key={passenger._id} className="liDiv" onClick={() => hi(passenger)}>
               <p>Name: {`${passenger.firstname} ${passenger.lastname}`}</p>
@@ -59,4 +59,5 @@ const SearchBar = () => {
   );
 };
 export default SearchBar;
+
 

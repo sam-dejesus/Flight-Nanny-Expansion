@@ -61,7 +61,7 @@ function App() {
               <Route path="/matches" element={<Matches />} />
               <Route path="/kids" element={<Kids />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/me" element={<Profile />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/profiles/:username" element={<Profile />} />
             </Routes>
           </div>

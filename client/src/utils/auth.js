@@ -28,7 +28,7 @@ export function loggedIn() {
 
 export function login(idToken) {
   localStorage.setItem("id_token", idToken);
-  window.location.assign("/me");
+  window.location.assign("/profile");
 }
 
 export function logout() {

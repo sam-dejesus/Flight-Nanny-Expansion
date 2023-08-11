@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { logout, loggedIn, getProfile } from "../../utils/auth";
 import { BiSolidPlaneAlt } from "react-icons/bi";
-
+import "./header.css"
 const Header = () => {
   const navigate = useNavigate();
 
@@ -24,14 +24,14 @@ const Header = () => {
             Flight Nanny
           </Link>
         </div>
-        <div className="flex-none">
+        <div className="d-flex flex-row col-6 justify-content-end align-items-end">
           <ul className="menu menu-horizontal px-1">
             {loggedIn() ? (
               <>
-                <Link className="navButton" to="/me">
+                <Link className="navButtonLogin" to="/profile">
                   {getProfile().data.username}'s profile
                 </Link>
-                <button className="navButton" onClick={logoutAction}>
+                <button className="navButtonLogin" onClick={logoutAction}>
                   Logout
                 </button>
               </>
