@@ -1,17 +1,14 @@
 import React from "react";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink,} from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import {Cloudinary} from "@cloudinary/url-gen";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Profile from "./pages/Profile";
+import Profile from "./pages/profile/Profile";
 import Matches from "./pages/Matches";
 import Kids from "./pages/Kids";
 
@@ -46,6 +43,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+  // const cld = new Cloudinary({cloud: {cloudName: 'dzzvyfw1y'}});
   return (
     <ApolloProvider client={client}>
 

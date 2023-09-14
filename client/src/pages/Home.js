@@ -7,10 +7,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
-    // Regex pattern for validating the budget input
-    const budgetPattern = /^\d+(\.\d{1,2})?$/;
-
-    // Regex pattern for validating the flight number input
 
 
   const [userData, setUserData] = useState(getProfile().data);
@@ -31,24 +27,27 @@ const Home = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+  
     let fieldValue = value;
+  
 
-    // Validate input using regex patterns
-    if (name === "price" && !budgetPattern.test(value)) {
-      fieldValue = formState.price; // Reset to previous value
-    }
-
+  
     setFormState({
       ...formState,
       [name]: fieldValue,
     });
   };
+  
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
-  
-    try {
+    const regex1To99 = /^(?:[1-9]|[1-9][0-9])$/;
+    const regex = /^(?:2000|1\d{3}|[1-9]\d{0,2}|0)$/;
+    const numericValuePrice = parseFloat(formState.price);
+    const numericValueChildren = parseInt(formState.children)
+
+  if(regex.test(numericValuePrice) && regex1To99.test(numericValueChildren)){
+        try {
       const { data } = await addPassenger({
         variables: { ...formState }
       });
@@ -71,6 +70,14 @@ const Home = () => {
       });
       console.error(e);
     }
+  }else{
+    toast.error("An error occurred while creating the passenger.", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+    });
+  }
+
   };
   
 
@@ -80,7 +87,7 @@ const Home = () => {
     <div className="d-flex flex-column justify-content-center">
       <h1 className="">Welcome {userData.username}</h1>
       <div className="">
-        <p className="">Which child is traveling with you today?</p>
+        <p className="">how many children will need a nanny?</p>
         <input
           className="form-input"
           placeholder="2"
@@ -106,7 +113,7 @@ const Home = () => {
         <p>What flight are you on?</p>
         <input
           className="form-input"
-          placeholder="flight_number"
+          placeholder="Flight Number"
           name="flight_number"
           type="text"
           value={formState.flight_number}
